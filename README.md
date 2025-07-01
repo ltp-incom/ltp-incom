@@ -9,7 +9,5 @@
 ![Record](https://img.shields.io/badge/13W%2021L-34%20Games-333333?style=for-the-badge)
 ![Diff](https://img.shields.io/badge/↓8%20MORE%20LOSSES-ff0000?style=for-the-badge)
 
-⚠️ CRITICAL ⚠️
-
 </div>
 <!-- LOL-STATS:END -->
