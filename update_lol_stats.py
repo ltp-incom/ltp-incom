@@ -52,12 +52,13 @@ def get_summoner_by_puuid(puuid, platform):
         print(f"❌ Error getting summoner: {response.status_code} - {response.text}")
         return None
 
-def get_ranked_stats(summoner_id, platform):
-    """Get ranked stats for summoner"""
-    url = f"https://{platform}.api.riotgames.com/lol/league/v4/entries/by-summoner/{summoner_id}"
+def get_ranked_stats(puuid, platform):
+    """Get ranked stats for summoner using PUUID"""
+    url = f"https://{platform}.api.riotgames.com/lol/league/v4/entries/by-puuid/{puuid}"
     headers = {"X-Riot-Token": RIOT_API_KEY}
     
     print(f"\n🔍 DEBUG: Fetching ranked stats from URL: {url}")
+    print(f"🔑 DEBUG: Using API Key: {RIOT_API_KEY[:20]}...")
     
     response = requests.get(url, headers=headers)
     print(f"📡 DEBUG: Response status: {response.status_code}")
@@ -66,11 +67,26 @@ def get_ranked_stats(summoner_id, platform):
         data = response.json()
         print(f"✅ DEBUG: Ranked data received: {json.dumps(data, indent=2)}")
         
+        if not data:
+            print("⚠️ DEBUG: Player has no ranked data (empty response)")
+            return None
+        
         for queue in data:
             if queue['queueType'] == 'RANKED_SOLO_5x5':
                 print(f"🎮 DEBUG: Found Solo/Duo queue data: {json.dumps(queue, indent=2)}")
                 return queue
-        print("⚠️ DEBUG: No Solo/Duo ranked data found")
+        print("⚠️ DEBUG: No Solo/Duo ranked data found (might only have Flex)")
+        
+        queue_types = [q['queueType'] for q in data]
+        print(f"📋 DEBUG: Available queues: {queue_types}")
+        
+    elif response.status_code == 403:
+        print("❌ DEBUG: 403 Forbidden - Check if your API key is valid and not expired")
+        print(f"❌ DEBUG: Response: {response.text}")
+    elif response.status_code == 429:
+        print("❌ DEBUG: 429 Rate Limited - Too many requests")
+    else:
+        print(f"❌ DEBUG: Error {response.status_code} - {response.text}")
     return None
 
 def get_tier_color(tier):
@@ -121,79 +137,67 @@ def update_readme_with_badges(stats, game_name, tag_line):
         tier_color = get_tier_color(tier)
         wr_color = get_winrate_color(winrate)
         
-        if tier in ['IRON', 'BRONZE']:
-            roast = "💩 ROCK BOTTOM GAMING 💩"
-            subtitle = f"### {roast}<br/>📢 {display_name} - Professional Feeder 📢"
-            extra_badges = f"""
-![Status](https://img.shields.io/badge/🎯_Skill_Level-UNDETECTABLE-ff0000?style=for-the-badge&labelColor=000000)
-![Talent](https://img.shields.io/badge/🧠_Game_IQ-NEGATIVE-ff0000?style=for-the-badge&labelColor=000000)
-![Future](https://img.shields.io/badge/🔮_Peak_Rank-STILL_{tier}-{tier_color}?style=for-the-badge&labelColor=000000)"""
-        elif winrate < 45:
-            roast = "🔥 SYSTEM MALFUNCTION 🔥"
-            subtitle = f"### {roast}<br/>⚠️ {display_name}'s Performance Review: FAILED ⚠️"
-            extra_badges = f"""
-![Status](https://img.shields.io/badge/💀_Status-WASHED_UP-ff0000?style=for-the-badge&labelColor=000000)
-![Diagnosis](https://img.shields.io/badge/🏥_Diagnosis-CHRONIC_FEEDER-ff6600?style=for-the-badge&labelColor=000000)
-![Advice](https://img.shields.io/badge/💡_Pro_Tip-UNINSTALL-ff0066?style=for-the-badge&labelColor=000000)"""
-        elif winrate < 48:
-            roast = "🚨 WARNING 🚨"
-            subtitle = f"### {roast}<br/>😰 {display_name} Struggling to Stay Relevant 😰"
-            extra_badges = f"""
-![Mental](https://img.shields.io/badge/🧠_Mental-BOOM-orange?style=for-the-badge&labelColor=000000)
-![Tilt](https://img.shields.io/badge/📐_Tilt_Level-MAXIMUM-ff9900?style=for-the-badge&labelColor=000000)"""
-        elif winrate < 50:
-            roast = "😬 BARELY HANGING ON 😬"
-            subtitle = f"### {roast}<br/>🎪 Welcome to {display_name}'s Clown Fiesta 🎪"
-            extra_badges = f"""
-![Copium](https://img.shields.io/badge/💊_Copium_Dose-LETHAL-yellow?style=for-the-badge&labelColor=000000)
-![Reality](https://img.shields.io/badge/🌍_Reality_Check-PENDING-ffcc00?style=for-the-badge&labelColor=000000)"""
+        if winrate < 50:
+            winrate_display = f"{winrate}%"
+            winrate_size = "120"
         else:
-            roast = ""
-            subtitle = f"### 🎮 {display_name}'s League Stats"
-            extra_badges = ""
+            winrate_display = f"{winrate}%"
+            winrate_size = "100"
+        
+        if tier in ['IRON', 'BRONZE']:
+            roast = "💩 SKILL ISSUE DETECTED 💩"
+            shame_badges = f"""
+![Status](https://img.shields.io/badge/🎯_Skill-404%20NOT%20FOUND-ff0000?style=for-the-badge&labelColor=000000)
+![Future](https://img.shields.io/badge/🔮_Peak-{tier}%20FOREVER-{tier_color}?style=for-the-badge&labelColor=000000)"""
+        elif winrate < 45:
+            roast = "🚨 EMERGENCY ALERT 🚨"
+            shame_badges = f"""
+![Status](https://img.shields.io/badge/💀_Status-WASHED-ff0000?style=for-the-badge&labelColor=000000)
+![Advice](https://img.shields.io/badge/💡_Advice-UNINSTALL-ff0066?style=for-the-badge&labelColor=000000)"""
+        elif winrate < 48:
+            roast = "⚠️ PERFORMANCE WARNING ⚠️"
+            shame_badges = f"""
+![Mental](https://img.shields.io/badge/🧠_Mental-BOOM-orange?style=for-the-badge&labelColor=000000)"""
+        elif winrate < 50:
+            roast = "😬 STRUGGLING 😬"
+            shame_badges = f"""
+![Copium](https://img.shields.io/badge/💊_Copium-OVERDOSE-yellow?style=for-the-badge&labelColor=000000)"""
+        else:
+            roast = "📊 STATS 📊"
+            shame_badges = ""
         
         loss_diff = losses - wins
-        if loss_diff > 20:
-            streak_msg = f"### 📉 DISASTER ALERT: {loss_diff} MORE LOSSES THAN WINS! 📉"
-        elif loss_diff > 10:
-            streak_msg = f"### ⚠️ Currently {loss_diff} more losses than wins! Time to quit? ⚠️"
-        elif loss_diff > 0:
-            streak_msg = f"**Currently {loss_diff} more losses than wins!** 📉"
+        if loss_diff > 0:
+            loss_msg = f"### 📉 {loss_diff} MORE LOSSES THAN WINS 📉"
         else:
-            streak_msg = ""
+            loss_msg = ""
         
         badges_section = f"""<!-- LOL-STATS:START -->
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=20&height=100&section=header&text=⚠️%20VIEWER%20DISCRETION%20ADVISED%20⚠️&fontSize=30&fontColor=ffffff&animation=twinkling"/>
+# {roast}
 
-{subtitle}
-
-<br/>
-
-![Rank](https://img.shields.io/badge/🏆_Rank-{tier}%20{rank}-{tier_color}?style=for-the-badge&logo=riot-games&logoColor=white&labelColor=000000)
-![LP](https://img.shields.io/badge/🔷_LP-{lp}-0066ff?style=for-the-badge&labelColor=000000)
-![Winrate](https://img.shields.io/badge/📊_Winrate-{winrate}%25-{wr_color}?style=for-the-badge&labelColor=000000)
-![Games](https://img.shields.io/badge/🎮_Games-{total}-666666?style=for-the-badge&labelColor=000000)
-{extra_badges}
+### {display_name}
 
 <br/>
 
-### 📈 Season {wins + losses} Performance Report 📉
+# <img src="https://img.shields.io/badge/WINRATE-{winrate_display}-{wr_color}?style=for-the-badge&labelColor=000000" height="{winrate_size}"/>
 
-<img src="https://img.shields.io/badge/WINS-{wins}-22c55e?style=flat-square&logo=checkmarx&logoColor=white" height="30"/>
-<img src="https://img.shields.io/badge/VS-⚔️-ffffff?style=flat-square" height="30"/>
-<img src="https://img.shields.io/badge/LOSSES-{losses}-ef4444?style=flat-square&logo=x&logoColor=white" height="30"/>
+<br/>
 
-### **Winrate: {winrate}%** {get_winrate_emoji(winrate)}
+![Rank](https://img.shields.io/badge/🏆_{tier}_{rank}-{lp}%20LP-{tier_color}?style=for-the-badge&labelColor=000000)
+![Games](https://img.shields.io/badge/🎮_S2025-{total}%20GAMES-666666?style=for-the-badge&labelColor=000000)
 
-{streak_msg}
+### {wins}W - {losses}L
 
-{f'<img src="https://img.shields.io/badge/🎯_Recommendation-FIND%20A%20NEW%20GAME-ff0000?style=for-the-badge&labelColor=000000"/>' if winrate < 45 else ""}
-{f'<img src="https://img.shields.io/badge/⚠️_Skill%20Issue-CONFIRMED-ff6600?style=for-the-badge&labelColor=000000"/>' if tier in ['IRON', 'BRONZE'] else ""}
-{f'<img src="https://img.shields.io/badge/📉_Trajectory-DOWNWARD%20SPIRAL-ff9900?style=for-the-badge&labelColor=000000"/>' if 45 <= winrate < 50 else ""}
+{loss_msg}
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=20&height=60&section=footer&fontSize=20&fontColor=ffffff&animation=twinkling"/>
+{shame_badges}
+
+{f"*Maybe League isn't for you...*" if winrate < 45 else ""}
+{f"*Certified {tier} Player*" if tier in ['IRON', 'BRONZE'] else ""}
+
+---
 
 </div>
 <!-- LOL-STATS:END -->"""
@@ -201,32 +205,25 @@ def update_readme_with_badges(stats, game_name, tag_line):
         badges_section = f"""<!-- LOL-STATS:START -->
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=100&section=header&text=🚨%20MISSING%20PERSON%20ALERT%20🚨&fontSize=30&fontColor=ffffff&animation=twinkling"/>
+# 🚨 UNRANKED COWARD ALERT 🚨
 
-### 🔍 LAST SEEN: Hiding in Normal Games 🔍
-### 📢 {display_name} - Too Scared for Ranked 📢
+### {display_name}
+
+<br/>
+
+# <img src="https://img.shields.io/badge/WINRATE-N/A-grey?style=for-the-badge&labelColor=000000" height="100"/>
 
 <br/>
 
 ![Status](https://img.shields.io/badge/🎮_Status-UNRANKED-grey?style=for-the-badge&labelColor=000000)
-![Courage](https://img.shields.io/badge/💪_Courage-NOT%20FOUND-ff0000?style=for-the-badge&labelColor=000000)
-![Excuse](https://img.shields.io/badge/🎭_Excuse-"Just%20Practicing"-ffcc00?style=for-the-badge&labelColor=000000)
-![Reality](https://img.shields.io/badge/🌍_Reality-SCARED%20OF%20RANKED-ff0066?style=for-the-badge&labelColor=000000)
+![Courage](https://img.shields.io/badge/💪_Courage-0%25-ff0000?style=for-the-badge&labelColor=000000)
+![Games](https://img.shields.io/badge/🏃_Ranked_Games-ZERO-ff0066?style=for-the-badge&labelColor=000000)
 
-<br/>
+### Too scared to play ranked? 🐔
 
-### 🏃‍♂️ Currently Hiding In: 🏃‍♂️
+*Currently hiding in ARAM* 
 
-<img src="https://img.shields.io/badge/ARAM-✓-22c55e?style=flat-square" height="25"/>
-<img src="https://img.shields.io/badge/Normals-✓-22c55e?style=flat-square" height="25"/>
-<img src="https://img.shields.io/badge/Bot%20Games-✓-22c55e?style=flat-square" height="25"/>
-<img src="https://img.shields.io/badge/Ranked-✗-ef4444?style=flat-square" height="25"/>
-
-<br/>
-
-*"I'm just warming up" - Every unranked player ever* 🤡
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=60&section=footer&fontSize=20&fontColor=ffffff&animation=twinkling"/>
+---
 
 </div>
 <!-- LOL-STATS:END -->"""
@@ -259,6 +256,27 @@ def get_winrate_emoji(winrate):
     else:
         return "💀💀💀"
 
+def test_api_key():
+    """Test if the API key is valid"""
+    test_url = "https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/test/test"
+    headers = {"X-Riot-Token": RIOT_API_KEY}
+    
+    print(f"\n🔑 Testing API key...")
+    response = requests.get(test_url, headers=headers)
+    
+    if response.status_code == 404:
+        print("✅ API key is valid (got expected 404 for fake account)")
+        return True
+    elif response.status_code == 403:
+        print("❌ API key is invalid or has expired!")
+        return False
+    elif response.status_code == 401:
+        print("❌ API key is missing or malformed!")
+        return False
+    else:
+        print(f"⚠️ Unexpected response: {response.status_code}")
+        return True
+
 def main():
     try:
         print("=" * 50)
@@ -267,12 +285,16 @@ def main():
         print(f"Region: {REGION} | Platform: {PLATFORM}")
         print("=" * 50)
         
-        # Check if API key exists
         if not RIOT_API_KEY:
             print("❌ ERROR: RIOT_API_KEY not found in environment variables!")
+            print("Available env vars:", list(os.environ.keys()))
             return
         else:
             print(f"✅ API Key found")
+            print(f"✅ API Key length: {len(RIOT_API_KEY)} characters")
+        if not test_api_key():
+            print("\n❌ Aborting due to invalid API key")
+            return
         
         account = get_account_by_riot_id(GAME_NAME, TAG_LINE, REGION)
         if not account:
@@ -284,15 +306,13 @@ def main():
         print(f"\n✅ Found account with PUUID: {puuid}")
         
         summoner = get_summoner_by_puuid(puuid, PLATFORM)
-        if not summoner:
-            print("\n❌ Could not get summoner data")
-            update_readme_with_badges(None, GAME_NAME, TAG_LINE)
-            return
+        if summoner:
+            print(f"\n✅ Found summoner ID: {summoner['id']}")
+            print(f"   Summoner Level: {summoner.get('summonerLevel', 'Unknown')}")
+        else:
+            print("\n⚠️ Could not get summoner data (but continuing with PUUID)")
         
-        print(f"\n✅ Found summoner ID: {summoner['id']}")
-        print(f"   Summoner Level: {summoner.get('summonerLevel', 'Unknown')}")
-        
-        stats = get_ranked_stats(summoner['id'], PLATFORM)
+        stats = get_ranked_stats(puuid, PLATFORM)
         
         update_readme_with_badges(stats, GAME_NAME, TAG_LINE)
         
