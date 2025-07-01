@@ -45,12 +45,10 @@ def get_tier_color(tier):
     }
     return colors.get(tier, 'blue')
 
-def update_readme(stats, game_name, tag_line):
+def update_readme(stats):
     """Update README with stats"""
     with open('README.md', 'r', encoding='utf-8') as file:
         content = file.read()
-    
-    display_name = f"{game_name}#{tag_line}"
     
     if stats:
         wins = stats['wins']
@@ -66,7 +64,7 @@ def update_readme(stats, game_name, tag_line):
         badges_section = f"""<!-- LOL-STATS:START -->
 <div align="center">
 
-## {display_name.upper()} (@{GITHUB_USERNAME}) WINRATE IS
+## [{GITHUB_USERNAME}](https://github.com/{GITHUB_USERNAME}) LoL Winrate:
 
 # {winrate}%
 
@@ -80,7 +78,7 @@ def update_readme(stats, game_name, tag_line):
         badges_section = f"""<!-- LOL-STATS:START -->
 <div align="center">
 
-## {display_name.upper()} (@{GITHUB_USERNAME}) IS
+## [{GITHUB_USERNAME}](https://github.com/{GITHUB_USERNAME}) LoL Winrate:
 
 # UNRANKED
 
@@ -101,12 +99,12 @@ def update_readme(stats, game_name, tag_line):
 def main():
     account = get_account_by_riot_id(GAME_NAME, TAG_LINE, REGION)
     if not account:
-        update_readme(None, GAME_NAME, TAG_LINE)
+        update_readme(None)
         return
     
     stats = get_ranked_stats(account['puuid'], PLATFORM)
     
-    update_readme(stats, GAME_NAME, TAG_LINE)
+    update_readme(stats)
     
     if stats:
         winrate = round((stats['wins'] / (stats['wins'] + stats['losses']) * 100), 1)
