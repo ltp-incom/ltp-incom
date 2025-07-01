@@ -1,4 +1,34 @@
 <!-- LOL-STATS:START -->
+<div align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=100&section=header&text=🚨%20MISSING%20PERSON%20ALERT%20🚨&fontSize=30&fontColor=ffffff&animation=twinkling"/>
+
+### 🔍 LAST SEEN: Hiding in Normal Games 🔍
+### 📢 wokobo#6969 - Too Scared for Ranked 📢
+
+<br/>
+
+![Status](https://img.shields.io/badge/🎮_Status-UNRANKED-grey?style=for-the-badge&labelColor=000000)
+![Courage](https://img.shields.io/badge/💪_Courage-NOT%20FOUND-ff0000?style=for-the-badge&labelColor=000000)
+![Excuse](https://img.shields.io/badge/🎭_Excuse-"Just%20Practicing"-ffcc00?style=for-the-badge&labelColor=000000)
+![Reality](https://img.shields.io/badge/🌍_Reality-SCARED%20OF%20RANKED-ff0066?style=for-the-badge&labelColor=000000)
+
+<br/>
+
+### 🏃‍♂️ Currently Hiding In: 🏃‍♂️
+
+<img src="https://img.shields.io/badge/ARAM-✓-22c55e?style=flat-square" height="25"/>
+<img src="https://img.shields.io/badge/Normals-✓-22c55e?style=flat-square" height="25"/>
+<img src="https://img.shields.io/badge/Bot%20Games-✓-22c55e?style=flat-square" height="25"/>
+<img src="https://img.shields.io/badge/Ranked-✗-ef4444?style=flat-square" height="25"/>
+
+<br/>
+
+*"I'm just warming up" - Every unranked player ever* 🤡
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12&height=60&section=footer&fontSize=20&fontColor=ffffff&animation=twinkling"/>
+
+</div>
 <!-- LOL-STATS:END -->
 
 <h1 align="left">Platform Engineer</h1>
