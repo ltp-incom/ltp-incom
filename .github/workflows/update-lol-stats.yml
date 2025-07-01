@@ -9,6 +9,9 @@ on:
     paths:
       - 'update_lol_stats.py'
 
+permissions:
+  contents: write
+
 jobs:
   update-readme:
     runs-on: ubuntu-latest
