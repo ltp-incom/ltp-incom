@@ -137,13 +137,6 @@ def update_readme_with_badges(stats, game_name, tag_line):
         tier_color = get_tier_color(tier)
         wr_color = get_winrate_color(winrate)
         
-        if winrate < 50:
-            winrate_display = f"{winrate}%"
-            winrate_size = "120"
-        else:
-            winrate_display = f"{winrate}%"
-            winrate_size = "100"
-        
         if tier in ['IRON', 'BRONZE']:
             roast = "💩 SKILL ISSUE DETECTED 💩"
             shame_badges = f"""
@@ -181,7 +174,8 @@ def update_readme_with_badges(stats, game_name, tag_line):
 
 <br/>
 
-# <img src="https://img.shields.io/badge/WINRATE-{winrate_display}-{wr_color}?style=for-the-badge&labelColor=000000" height="{winrate_size}"/>
+# {winrate}%
+## WINRATE
 
 <br/>
 
@@ -211,7 +205,8 @@ def update_readme_with_badges(stats, game_name, tag_line):
 
 <br/>
 
-# <img src="https://img.shields.io/badge/WINRATE-N/A-grey?style=for-the-badge&labelColor=000000" height="100"/>
+# N/A
+## WINRATE
 
 <br/>
 
@@ -292,6 +287,7 @@ def main():
         else:
             print(f"✅ API Key found")
             print(f"✅ API Key length: {len(RIOT_API_KEY)} characters")
+        
         if not test_api_key():
             print("\n❌ Aborting due to invalid API key")
             return
