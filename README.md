@@ -52,7 +52,7 @@
 
 <br/>
 
-> **[cme-incom](https://github.com/cme-incom)** | Region: **EUW1** | Updated: **2025-07-01 12:43**
+> **[cme-incom](https://github.com/cme-incom)** | Region: **EUW1** | Updated: **2025-07-01 18:29**
 > 
 > *"It's not about winning, it's about having fun"* - wokobo, probably
 
