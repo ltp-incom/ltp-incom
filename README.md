@@ -2,7 +2,9 @@
 <!-- LOL-STATS:END -->
 
 <h1 align="left">Platform Engineer</h1>
+
 ###
+
 <div align="left">
 <img src="https://skillicons.dev/icons?i=github" height="40" alt="github logo" />
 <img width="12" />
@@ -20,4 +22,5 @@
 <img width="12" />
 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg" height="40" alt="prometheus logo" />
 </div>
+
 ###
