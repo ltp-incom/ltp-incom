@@ -1,7 +1,7 @@
 <!-- LOL-STATS:START -->
 <div align="center">
 
-## WOKOBO#6969 (@cme-incom) WINRATE IS
+## [cme-incom](https://github.com/cme-incom) LoL Winrate:
 
 # 38.2%
 
