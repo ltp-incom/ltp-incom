@@ -137,61 +137,27 @@ def update_readme_with_badges(stats, game_name, tag_line):
         tier_color = get_tier_color(tier)
         wr_color = get_winrate_color(winrate)
         
-        if tier in ['IRON', 'BRONZE']:
-            roast = "💩 SKILL ISSUE DETECTED 💩"
-            shame_badges = f"""
-![Status](https://img.shields.io/badge/🎯_Skill-404%20NOT%20FOUND-ff0000?style=for-the-badge&labelColor=000000)
-![Future](https://img.shields.io/badge/🔮_Peak-{tier}%20FOREVER-{tier_color}?style=for-the-badge&labelColor=000000)"""
-        elif winrate < 45:
-            roast = "🚨 EMERGENCY ALERT 🚨"
-            shame_badges = f"""
-![Status](https://img.shields.io/badge/💀_Status-WASHED-ff0000?style=for-the-badge&labelColor=000000)
-![Advice](https://img.shields.io/badge/💡_Advice-UNINSTALL-ff0066?style=for-the-badge&labelColor=000000)"""
-        elif winrate < 48:
-            roast = "⚠️ PERFORMANCE WARNING ⚠️"
-            shame_badges = f"""
-![Mental](https://img.shields.io/badge/🧠_Mental-BOOM-orange?style=for-the-badge&labelColor=000000)"""
+        if winrate < 45:
+            status_msg = "⚠️ CRITICAL ⚠️"
         elif winrate < 50:
-            roast = "😬 STRUGGLING 😬"
-            shame_badges = f"""
-![Copium](https://img.shields.io/badge/💊_Copium-OVERDOSE-yellow?style=for-the-badge&labelColor=000000)"""
+            status_msg = "📉 STRUGGLING 📉"
         else:
-            roast = "📊 STATS 📊"
-            shame_badges = ""
+            status_msg = "📊 STATS 📊"
         
         loss_diff = losses - wins
-        if loss_diff > 0:
-            loss_msg = f"### 📉 {loss_diff} MORE LOSSES THAN WINS 📉"
-        else:
-            loss_msg = ""
         
         badges_section = f"""<!-- LOL-STATS:START -->
 <div align="center">
 
-# {roast}
-
-### {display_name}
-
-<br/>
+## {display_name.upper()} (@{GITHUB_USERNAME}) WINRATE IS
 
 # {winrate}%
-## WINRATE
 
-<br/>
+![Rank](https://img.shields.io/badge/{tier}%20{rank}-{lp}%20LP-{tier_color}?style=for-the-badge)
+![Record](https://img.shields.io/badge/{wins}W%20{losses}L-{total}%20Games-333333?style=for-the-badge)
+{f'![Diff](https://img.shields.io/badge/↓{loss_diff}%20MORE%20LOSSES-ff0000?style=for-the-badge)' if loss_diff > 0 else ''}
 
-![Rank](https://img.shields.io/badge/🏆_{tier}_{rank}-{lp}%20LP-{tier_color}?style=for-the-badge&labelColor=000000)
-![Games](https://img.shields.io/badge/🎮_S2025-{total}%20GAMES-666666?style=for-the-badge&labelColor=000000)
-
-### {wins}W - {losses}L
-
-{loss_msg}
-
-{shame_badges}
-
-{f"*Maybe League isn't for you...*" if winrate < 45 else ""}
-{f"*Certified {tier} Player*" if tier in ['IRON', 'BRONZE'] else ""}
-
----
+{status_msg}
 
 </div>
 <!-- LOL-STATS:END -->"""
@@ -199,26 +165,14 @@ def update_readme_with_badges(stats, game_name, tag_line):
         badges_section = f"""<!-- LOL-STATS:START -->
 <div align="center">
 
-# 🚨 UNRANKED COWARD ALERT 🚨
+## {display_name.upper()} (@{GITHUB_USERNAME}) IS
 
-### {display_name}
+# UNRANKED
 
-<br/>
+![Status](https://img.shields.io/badge/TOO%20SCARED%20FOR%20RANKED-ff0000?style=for-the-badge)
+![Games](https://img.shields.io/badge/0%20RANKED%20GAMES-333333?style=for-the-badge)
 
-# N/A
-## WINRATE
-
-<br/>
-
-![Status](https://img.shields.io/badge/🎮_Status-UNRANKED-grey?style=for-the-badge&labelColor=000000)
-![Courage](https://img.shields.io/badge/💪_Courage-0%25-ff0000?style=for-the-badge&labelColor=000000)
-![Games](https://img.shields.io/badge/🏃_Ranked_Games-ZERO-ff0066?style=for-the-badge&labelColor=000000)
-
-### Too scared to play ranked? 🐔
-
-*Currently hiding in ARAM* 
-
----
+🐔 CURRENTLY HIDING IN NORMALS 🐔
 
 </div>
 <!-- LOL-STATS:END -->"""
