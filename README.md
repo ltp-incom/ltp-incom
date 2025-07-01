@@ -1,17 +1,4 @@
 <!-- LOL-STATS:START -->
-<div align="center">
-
-# 🚨 BREAKING NEWS 🚨
-### wokobo#6969 is TOO SCARED to play ranked
-
-![Status](https://img.shields.io/badge/Status-UNRANKED-grey?style=for-the-badge)
-![Courage](https://img.shields.io/badge/Courage-NOT%20FOUND-red?style=for-the-badge)
-![Excuse](https://img.shields.io/badge/Excuse-"Just%20Warming%20Up"-yellow?style=for-the-badge)
-
-*Hiding in ARAM and normals* 🏃‍♂️💨
-
----
-</div>
 <!-- LOL-STATS:END -->
 
 <h1 align="left">Platform Engineer</h1>
