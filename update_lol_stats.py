@@ -8,6 +8,7 @@ GAME_NAME = "wokobo"
 TAG_LINE = "6969"
 PLATFORM = "euw1"
 REGION = "europe"
+GITHUB_USERNAME = "cme-incom"
 
 RIOT_API_KEY = os.environ.get('RIOT_API_KEY')
 
