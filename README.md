@@ -4,7 +4,7 @@
 
 <h1><!-- WINRATE -->38.2<!-- /WINRATE -->% 💀</h1>
 
-**<!-- WINS -->13<!-- /WINS -->W - <!-- LOSSES -->21<!-- /LOSSES -->L** • **<!-- TIER -->PLATINUM<!-- /TIER --> <!-- RANK -->IV<!-- /RANK -->** • **<!-- LP -->0<!-- /LP --> LP**
+**<!-- WINS -->13<!-- /WINS -->W - <!-- LOSSES -->21<!-- /LOSSES -->L** • **GOLD <!-- RANK -->IV<!-- /RANK -->** • **<!-- LP -->0<!-- /LP --> LP**
 
 <sub>wokobo#6969 • EUW</sub>
 
