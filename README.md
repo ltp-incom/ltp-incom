@@ -1,4 +1,4 @@
-# [Christopher Mellergaard Eriksen](https://github.com/cme-incom) League of Legends Stats
+# Wokobo League of Legends Stats
 
 <div align="center">
 
@@ -16,6 +16,6 @@
 
 ---
 
-<sub>Auto-updated every 6 hours</sub>
+<sub>Wokobo == [Christopher Mellergaard Eriksen](https://github.com/cme-incom)</sub>
 
 </div>
