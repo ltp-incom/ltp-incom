@@ -1,60 +1,8 @@
-<!-- LOL-STATS:START -->
-<div align="center">
-  
-# 💎 League of Legends Stats 💎
+# League of Legends Stats
 
-<img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8ZGVmcz4KICAgIDxsaW5lYXJHcmFkaWVudCBpZD0iYmdHcmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwRjBGMEY7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzFBMUExQTtzdG9wLW9wYWNpdHk6MSIgLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InRpZXJHcmFkaWVudCIgeDE9IjAlIiB5MT0iMCUiIHgyPSIxMDAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0eWxlPSJzdG9wLWNvbG9yOiMwMENFRDE7c3RvcC1vcGFjaXR5OjEiIC8+CiAgICAgIDxzdG9wIG9mZnNldD0iMTAwJSIgc3R5bGU9InN0b3AtY29sb3I6IzAwQ0VEMTtzdG9wLW9wYWNpdHk6MC42IiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICAgIDxmaWx0ZXIgaWQ9Imdsb3ciPgogICAgICA8ZmVHYXVzc2lhbkJsdXIgc3RkRGV2aWF0aW9uPSI0IiByZXN1bHQ9ImNvbG9yZWRCbHVyIi8+CiAgICAgIDxmZU1lcmdlPgogICAgICAgIDxmZU1lcmdlTm9kZSBpbj0iY29sb3JlZEJsdXIiLz4KICAgICAgICA8ZmVNZXJnZU5vZGUgaW49IlNvdXJjZUdyYXBoaWMiLz4KICAgICAgPC9mZU1lcmdlPgogICAgPC9maWx0ZXI+CiAgICA8cGF0dGVybiBpZD0iZ3JpZCIgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KICAgICAgPHBhdGggZD0iTSA0MCAwIEwgMCAwIDAgNDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzJBMkEyQSIgc3Ryb2tlLXdpZHRoPSIxIiBvcGFjaXR5PSIwLjIiLz4KICAgIDwvcGF0dGVybj4KICA8L2RlZnM+CiAgCiAgPCEtLSBCYWNrZ3JvdW5kIC0tPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNDAwIiBmaWxsPSJ1cmwoI2JnR3JhZGllbnQpIiByeD0iMjAiLz4KICA8cmVjdCB3aWR0aD0iODAwIiBoZWlnaHQ9IjQwMCIgZmlsbD0idXJsKCNncmlkKSIgcng9IjIwIi8+CiAgCiAgPCEtLSBHbG93IGVmZmVjdCAocmVkIGZvciBsb3cgV1IpIC0tPgogIDxlbGxpcHNlIGN4PSI0MDAiIGN5PSIyMDAiIHJ4PSIzMDAiIHJ5PSIxNTAiIGZpbGw9IiNGRjAwMDAiIG9wYWNpdHk9IjAuMSIgZmlsdGVyPSJ1cmwoI2dsb3cpIi8+CiAgCiAgPCEtLSBUaXRsZSAtLT4KICA8dGV4dCB4PSI0MDAiIHk9IjUwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjgiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkZGRkZGIj4KICAgIHdva29ibyM2OTY5IPCfmK0KICA8L3RleHQ+CiAgCiAgPCEtLSBUaWVyIEJhZGdlIHdpdGggV2FybmluZyAtLT4KICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg0MDAsIDEyMCkiPgogICAgPGNpcmNsZSByPSI2MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzMzMzIiBzdHJva2Utd2lkdGg9IjgiLz4KICAgIDxjaXJjbGUgcj0iNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI0ZGMDAwMCIgc3Ryb2tlLXdpZHRoPSI4IiAKICAgICAgICAgICAgc3Ryb2tlLWRhc2hhcnJheT0iODYuMzYyNTYgMTM5LjcxNzQzOTk5OTk5OTk4IgogICAgICAgICAgICB0cmFuc2Zvcm09InJvdGF0ZSgtOTApIiBzdHJva2UtbGluZWNhcD0icm91bmQiLz4KICAgIDx0ZXh0IHk9IjgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzMiIgZm9udC13ZWlnaHQ9ImJvbGQiIAogICAgICAgICAgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzAwQ0VEMSI+8J+SjjwvdGV4dD4KICAgIDx0ZXh0IHk9Ii04MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE2IiBmb250LXdlaWdodD0iYm9sZCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI0ZGMDAwMCI+4pqg77iPIExPVyBXUiBXQVJOSU5HIOKaoO+4jzwvdGV4dD4KICA8L2c+CiAgCiAgPCEtLSBSYW5rIEluZm8gLS0+CiAgPHRleHQgeD0iNDAwIiB5PSIyMzAiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIzNiIgZm9udC13ZWlnaHQ9ImJvbGQiIAogICAgICAgIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiMwMENFRDEiIGZpbHRlcj0idXJsKCNnbG93KSI+CiAgICBQTEFUSU5VTSBJVgogIDwvdGV4dD4KICA8dGV4dCB4PSI0MDAiIHk9IjI2MCIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjIwIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjQ0NDQ0NDIj4KICAgIDAgTFAgKERyb3BwaW5nIGZhc3QhIPCfk4kpCiAgPC90ZXh0PgogIAogIDwhLS0gU3RhdHMgd2l0aCBjb2xvciBjb2RpbmcgLS0+CiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjAwLCAzMjApIj4KICAgIDxyZWN0IHg9Ii04MCIgeT0iLTMwIiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjYwIiByeD0iMTAiIGZpbGw9IiMxRTFFMUUiIHN0cm9rZT0iI0ZGMDAwMCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8dGV4dCB5PSItNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjQUFBQUFBIj5XSU4gUkFURTwvdGV4dD4KICAgIDx0ZXh0IHk9IjE4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRkYwMDAwIj4zOC4yJTwvdGV4dD4KICA8L2c+CiAgCiAgPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDAwLCAzMjApIj4KICAgIDxyZWN0IHg9Ii04MCIgeT0iLTMwIiB3aWR0aD0iMTYwIiBoZWlnaHQ9IjYwIiByeD0iMTAiIGZpbGw9IiMxRTFFMUUiIHN0cm9rZT0iIzRDQUY1MCIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgICA8dGV4dCB5PSItNSIgZm9udC1mYW1pbHk9IkFyaWFsLCBzYW5zLXNlcmlmIiBmb250LXNpemU9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjQUFBQUFBIj5XSU5TPC90ZXh0PgogICAgPHRleHQgeT0iMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyNCIgZm9udC13ZWlnaHQ9ImJvbGQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM0Q0FGNTAiPjEzPC90ZXh0PgogIDwvZz4KICAKICA8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSg2MDAsIDMyMCkiPgogICAgPHJlY3QgeD0iLTgwIiB5PSItMzAiIHdpZHRoPSIxNjAiIGhlaWdodD0iNjAiIHJ4PSIxMCIgZmlsbD0iIzFFMUUxRSIgc3Ryb2tlPSIjRjQ0MzM2IiBzdHJva2Utd2lkdGg9IjIiLz4KICAgIDx0ZXh0IHk9Ii01IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiNBQUFBQUEiPkxPU1NFUzwvdGV4dD4KICAgIDx0ZXh0IHk9IjE4IiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSJib2xkIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjRjQ0MzM2Ij4yMSDwn5SlPC90ZXh0PgogIDwvZz4KPC9zdmc+" alt="LoL Stats" width="800"/>
-
-### 💬 💀 RIP MMR (2024-2025) - Gone but not forgotten 💀
-
----
-
-### 📊 Performance Analysis
-
-<table>
-  <tr>
-    <td align="center">
-      <h3>🎯 Current Status</h3>
-      <b>📉 Struggling</b>
-    </td>
-    <td align="center">
-      <h3>🏆 Games Played</h3>
-      <b>34</b>
-    </td>
-    <td align="center">
-      <h3>📈 Win Difference</h3>
-      <b style="color: red">-8</b>
-    </td>
-  </tr>
-</table>
-
-### 🏅 Special Achievements
-🏆 **40% Club Member** - Elite underperformer
-📊 **Statistical Anomaly** - How is this even possible?
-
-
-### 📈 Fun Facts
-- **⏰ Time spent losing:** ~10 hours (0 days)
-- **💔 Dreams crushed:** 21
-- **🎲 Coinflip performance:** WORSE than a coin
-- **📉 Chance of reaching 50% WR:** Need 8 straight wins!
-
-<details>
-<summary><b>🔍 Detailed Stats (click if you dare)</b></summary>
-
-- **Matches where team said "gg wp":** Probably 13
-- **Matches where team said "report [champion]":** Definitely 21
-- **Times blamed jungler:** 21
-- **Times it was actually your fault:** Also 21
-- **Current mental state:** ☠️ Dead inside
-
-</details>
-
-<br/>
-
-> **[cme-incom](https://github.com/cme-incom)** | Region: **EUW1** | Updated: **2025-07-02 01:47**
-> 
-> *"It's not about winning, it's about having fun"* - wokobo, probably
-
-</div>
-<!-- LOL-STATS:END -->
+**Tier:** <!-- TIER -->PLATINUM<!-- /TIER --> <!-- RANK -->IV<!-- /RANK -->
+**LP:** <!-- LP -->0<!-- /LP -->
+**Winrate:** <!-- WINRATE -->38.2<!-- /WINRATE -->%
+**Wins:** <!-- WINS -->13<!-- /WINS -->
+**Losses:** <!-- LOSSES -->21<!-- /LOSSES -->
+**Total Games:** <!-- TOTAL -->34<!-- /TOTAL -->
