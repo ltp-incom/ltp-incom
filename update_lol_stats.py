@@ -3,7 +3,6 @@ import re
 import requests
 from urllib.parse import quote
 
-# Constants
 GAME_NAME = "wokobo"
 TAG_LINE = "6969"
 PLATFORM = "euw1"
