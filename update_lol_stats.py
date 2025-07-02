@@ -35,7 +35,6 @@ def update_readme(stats):
         total = wins + losses
         winrate = round((wins / total * 100), 1) if total > 0 else 0
         
-        # Simple regex replacements for the numbers
         content = re.sub(r'<!-- WINS -->.*?<!-- /WINS -->', f'<!-- WINS -->{wins}<!-- /WINS -->', content)
         content = re.sub(r'<!-- LOSSES -->.*?<!-- /LOSSES -->', f'<!-- LOSSES -->{losses}<!-- /LOSSES -->', content)
         content = re.sub(r'<!-- TOTAL -->.*?<!-- /TOTAL -->', f'<!-- TOTAL -->{total}<!-- /TOTAL -->', content)
