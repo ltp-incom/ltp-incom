@@ -51,9 +51,6 @@ def main():
     if account:
         stats = get_ranked_stats(account['puuid'], PLATFORM)
         update_readme(stats)
-        print("✅ Updated stats")
-    else:
-        print("❌ Account not found")
 
 if __name__ == "__main__":
     main()
