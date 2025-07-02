@@ -14,8 +14,6 @@
 
 <br>
 
----
-
 <sub>Wokobo == [Christopher Mellergaard Eriksen](https://github.com/cme-incom)</sub>
 
 </div>
