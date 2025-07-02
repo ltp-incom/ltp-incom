@@ -1,4 +1,4 @@
-# Wokobo League of Legends Stats
+# Wokobo League Stats
 
 <div align="center">
 
